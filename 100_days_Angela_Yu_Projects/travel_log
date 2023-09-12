@@ -1,0 +1,35 @@
+travel_log = [
+{
+  "country": "France",
+  "visits": 12,
+  "cities": ["Paris", "Lille", "Dijon"]
+},
+{
+  "country": "Germany",
+  "visits": 5,
+  "cities": ["Berlin", "Hamburg", "Stuttgart"]
+},
+]
+
+def add_new_country(countryName, numVisited, cities):
+
+  new_country = {}
+
+  new_country['country'] = countryName
+  new_country['visits'] = numVisited
+  new_country['cities'] = cities
+
+  print(f"You've visited {new_country['country']} {new_country['visits']} times")
+
+  for i, city in enumerate(cities):
+    if i < len(cities) - 1:
+      print(f"You've been to {cities[i]} and {cities[i + 1]}")
+      break
+    else:
+      print(f"You've been to {city}")
+
+  travel_log.append(new_country)
+
+
+
+add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
